@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Villa Mazzo</title>
+</head>
+<body>
+
+    <div>Barra de Navegação: <a href="{{ url_for('login') }}">Login</a>   <a href="{{ url_for('index') }}">Home</a> </div>
+    <hr>
+
+    <!--    Show flash messages     -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+</body>
+</html>
