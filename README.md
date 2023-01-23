@@ -1,1 +1,1 @@
-# inventory_control_flask
+# Inventory Control with Flask
