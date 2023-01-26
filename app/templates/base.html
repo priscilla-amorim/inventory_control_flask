@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Villa Mazzo</title>
+<!--    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">-->
 </head>
 <body>
 
-    <div>Barra de Navegação: <a href="{{ url_for('login') }}">Login</a>   <a href="{{ url_for('index') }}">Home</a> </div>
+    <div>Hello, {{ current_user.username }}!
+        {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Home</a>
+
+    </div>
     <hr>
 
     <!--    Show flash messages     -->
